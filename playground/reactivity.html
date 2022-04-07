@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      let div = document.querySelector('#app');
+      let viewModel = {};
+
+      // Object.defineProperty(객체 명, 객체 속성명, {
+      // 속성 정의
+      //});
+
+      Object.defineProperty(viewModel, 'str', {
+        get: function () {
+          console.log('접근');
+        },
+        set: function (newValue) {
+          console.log('할당', newValue);
+
+          //해당 객체의 str 항목에 값 설정시 div의 속성이 적용됨, 화면 자동 갱신
+          div.innerHTML = newValue;
+        },
+      });
+    </script>
+  </body>
+</html>
