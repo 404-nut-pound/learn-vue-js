@@ -9,6 +9,11 @@
   <body>
     <div id="app">
       {{ message }}
+      <div>
+        <router-link to="/login">Login</router-link>
+        <router-link to="/main">Main</router-link>
+      </div>
+      <!--router-link에서 이동한 컴포넌트의 템플릿이 표현됨-->
       <router-view></router-view>
     </div>
 
@@ -24,6 +29,8 @@
       };
 
       const router = new VueRouter({
+        // url에 #을 없앰, contextPath 정보가 없어지므로 비권장
+        mode: 'history',
         // 페이지의 라우팅 정보를 객체 배열로 정의
         routes: [
           {
