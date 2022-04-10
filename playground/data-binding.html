@@ -11,6 +11,10 @@
       <!-- v-bind 이후의 명칭에 대한 속성에 data.항목 명의 값을 입력 <p id="asdf">{{ number }}</p> -->
       <p v-bind:id="uuid" v-bind:class="name">{{ number }}</p>
       <p>{{doubleNumber}}</p>
+      <div v-if="isLoading">Loading...</div>
+      <div v-else>Welcome, User.</div>
+      <!-- v-show의 경우 dom은 삭제되지 않고 style만 변경됨, 용도에 따라 사용 -->
+      <div v-show="isLoading">Loading(show)...</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -21,6 +25,7 @@
           number: 10,
           uuid: 'asdf',
           name: 'text-blue',
+          isLoading: true,
         },
         computed: {
           doubleNumber: function () {
