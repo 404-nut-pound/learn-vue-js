@@ -19,6 +19,13 @@
         data: {
           number: 10,
         },
+        // 주 사용 - 화면에서 끝나는 작업(valid 작업 등)
+        computed: {
+          doubleNumber: function () {
+            return this.number * 2;
+          },
+        },
+        // 주 사용 - 화면이 아닌 외부에 접근이 필요한 작업
         watch: {
           number: function () {
             this.logText();
