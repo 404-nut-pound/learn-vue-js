@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-bind 이후의 명칭에 대한 속성에 data.항목 명의 값을 입력 <p id="asdf">{{ number }}</p> -->
+      <p v-bind:id="uuid" v-bind:class="name">{{ number }}</p>
+      <p>{{doubleNumber}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          number: 10,
+          uuid: 'asdf',
+          name: 'text-blue',
+        },
+        computed: {
+          doubleNumber: function () {
+            return this.number * 2;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
