@@ -1,9 +1,11 @@
 <template>
-  <div>{{ message }}</div>
-  <app-header
-    v-bind:appHeaderProps="header"
-    v-on:renew="renewMessage"
-  ></app-header>
+  <div>
+    {{ message }}
+    <app-header
+      v-bind:appHeaderProps="header"
+      v-on:renew="renewMessage"
+    ></app-header>
+  </div>
 </template>
 
 <script>
